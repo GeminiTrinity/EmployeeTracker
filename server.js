@@ -1,6 +1,6 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-const { rootCertificates } = require("tls");
+var cTable = require("console.table")
 
 var connection = mysql.createConnection({
     host: "localhost",
