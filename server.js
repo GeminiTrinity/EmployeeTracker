@@ -60,6 +60,11 @@ const addEmployeeQuestion = [
 
         ]
     },
+    {
+        name: "employee-salary",
+        type: "input",
+        message: "What is the employee's salary?"
+    }
 ];
 
 const removeEmployee = [
