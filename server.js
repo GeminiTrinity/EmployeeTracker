@@ -1,6 +1,7 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-var cTable = require("console.table")
+var cTable = require("console.table");
+const { first } = require("lodash");
 
 var connection = mysql.createConnection({
     host: "localhost",
@@ -14,6 +15,18 @@ connection.connect(function(err) {
     if (err) throw err;
     console.log("Connected as ID: " + connection.threadId);
 })
+
+function askFirstQuestion() {
+    inquirer.prompt(firstQuestion).then((answer) => {
+        
+        
+        
+    })
+}
+
+
+askFirstQuestion();
+
 
 const firstQuestion = [
     {
