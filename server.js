@@ -1,7 +1,6 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 var cTable = require("console.table");
-const { first } = require("lodash");
 
 var connection = mysql.createConnection({
     host: "localhost",
@@ -18,14 +17,36 @@ connection.connect(function(err) {
 
 function askFirstQuestion() {
     inquirer.prompt(firstQuestion).then((answer) => {
+
+        if(answer.firstQuestion === "View All Employees") {
+            // display table of employees
+        }
+
+        else if(answer.firstQuestion === "View All Employees By Department") {
+            // display table of employees w/ dept
+        }
         
-        
-        
+        else if(answer.firstQuestion === "View All Employees By Manager") {
+            // display table of employees w/ manager
+        }
+
+        else if(answer.firstQuestion === "Add Employee") {
+            inquirer.prompt(addEmployeeQuestion)
+        }
+
+        else if(answer.firstQuestion === "Remove Employee") {
+            inquirer.prompt(removeEmployee)
+        }
+
+        else if(answer.firstQuestion === "Update Employee Role")
+            inquirer.prompt(updateEmployeeRole)
+
+        else(answer.firstQuestion === "Update Employee Manager")
+            inquirer.prompt(updateEmployeeManager)
     })
 }
 
 
-askFirstQuestion();
 
 
 const firstQuestion = [
@@ -35,7 +56,7 @@ const firstQuestion = [
         message: "What would you like to do?",
         choices: [
             "View All Employees",
-            "View All Employeees By Department",
+            "View All Employees By Department",
             "View All Employees By Manager",
             "Add Employee",
             "Remove Employee",
@@ -139,3 +160,5 @@ const updateEmployeeManager = [
         ]
     }
 ];
+
+askFirstQuestion();
