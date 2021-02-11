@@ -8,14 +8,6 @@ function askFirstQuestion() {
             // display table of employees
         }
 
-        else if(answer.firstQuestion === "View All Employees By Department") {
-            // display table of employees w/ dept
-        }
-        
-        else if(answer.firstQuestion === "View All Employees By Manager") {
-            // display table of employees w/ manager
-        }
-
         else if(answer.firstQuestion === "Add Employee") {
             inquirer.prompt(addEmployeeQuestion)
         }
@@ -26,9 +18,6 @@ function askFirstQuestion() {
 
         else if(answer.firstQuestion === "Update Employee Role")
             inquirer.prompt(updateEmployeeRole)
-
-        else(answer.firstQuestion === "Update Employee Manager")
-            inquirer.prompt(updateEmployeeManager)
     })
 }
 
@@ -42,12 +31,9 @@ const firstQuestion = [
         message: "What would you like to do?",
         choices: [
             "View All Employees",
-            "View All Employees By Department",
-            "View All Employees By Manager",
             "Add Employee",
             "Remove Employee",
             "Update Employee Role",
-            "Update Employee Manager"
         ]
     }
 ];
@@ -92,17 +78,6 @@ const addEmployeeQuestion = [
     }
 ];
 
-const removeEmployee = [
-    {
-        name: "remove-employee",
-        type: "list",
-        message: "Which employee would you like to remove?",
-        choices: [
-
-        ]
-    }
-]
-
 const updateEmployeeRole = [
     {
         name: "update-employee-role",
@@ -124,25 +99,6 @@ const updateEmployeeRole = [
             "Account Manager",
             "Accountant",
             "Legal Team Lead"
-        ]
-    }
-];
-
-const updateEmployeeManager = [
-    {
-        name: "update-employee-manager",
-        type: "list",
-        message: "Which employee do you want to update?",
-        choices: [
-
-        ]
-    },
-    {
-        name: "new-manager",
-        type: "list",
-        message: "Who is the employee's new manager?",
-        choices: [
-
         ]
     }
 ];
