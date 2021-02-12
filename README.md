@@ -1,4 +1,4 @@
-<h3>Employee Tracker</h3>
+<h2>Employee Tracker</h2>
 
 Looking for a nice, convenient way to keep track of your employees? Look no further! Add, remove, and update your employees, their roles, and their managers with a few simple questions!
 
