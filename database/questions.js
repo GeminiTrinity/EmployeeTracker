@@ -38,18 +38,27 @@ const addEmployeeQuestion = [
 
 const updateEmployeeRole = [
     {
-        name: "update-employee-role",
+        name: "updateEmployeeRole",
         type: "input",
         message: "Enter the Employee's ID that you want to update.",
     },
     {
-        name: "new-role",
+        name: "newRole",
         type: "input",
         message: "Enter the ID of the Employee's new role.",
     }
 ];
 
+const removeEmployee = [
+    {
+        name: "removeEmployee",
+        type: "input",
+        message: "Enter the Employee's ID that you want to remove."
+    }
+]
+
 
 module.exports.firstQuestion = firstQuestion;
 module.exports.addEmployeeQuestion = addEmployeeQuestion;
 module.exports.updateEmployeeRole = updateEmployeeRole;
+module.exports.removeEmployee = removeEmployee;
