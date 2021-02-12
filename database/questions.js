@@ -34,11 +34,6 @@ const addEmployeeQuestion = [
         type: "input",
         message: "Who is the employee's manager ID? (leave blank if none)",
     },
-    {
-        name: "employeeSalary",
-        type: "input",
-        message: "What is the employee's salary?"
-    }
 ];
 
 const updateEmployeeRole = [
