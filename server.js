@@ -1,106 +1,47 @@
+var connection = require("./database/connection");
 var inquirer = require("inquirer");
-var cTable = require("console.table");
+require("console.table");
+var questions = require("./database/questions.js")
 
 function askFirstQuestion() {
-    inquirer.prompt(firstQuestion).then((answer) => {
-
-        if(answer.firstQuestion === "View All Employees") {
-            // display table of employees
+    inquirer.prompt(questions.firstQuestion).then(function (answer)) {
+        switch(answer.intro) {
+            case "View All Employees"
+                viewAllEmployees();
+            break;
+            case "Add Employee"
+                addEmployee();
+            break;
+            case "Remove Employee"
+                removeEmployee();
+            break;
+            case "Update Employee Role"
+                updateEmployeeRole();
+            break;
         }
-
-        else if(answer.firstQuestion === "Add Employee") {
-            inquirer.prompt(addEmployeeQuestion)
-        }
-
-        else if(answer.firstQuestion === "Remove Employee") {
-            inquirer.prompt(removeEmployee)
-        }
-
-        else if(answer.firstQuestion === "Update Employee Role")
-            inquirer.prompt(updateEmployeeRole)
-    })
+    };
 }
 
+function viewAllEmployees() {
+    connection.query(
 
+    )
+}
 
+function addEmployee() {
+    connection.query(
 
-const firstQuestion = [
-    {
-        name: "intro",
-        type: "list",
-        message: "What would you like to do?",
-        choices: [
-            "View All Employees",
-            "Add Employee",
-            "Remove Employee",
-            "Update Employee Role",
-        ]
-    }
-];
+    )
+}
 
-const addEmployeeQuestion = [
-    {
-        name: "first-name",
-        type: "input",
-        message: "What is the Employee's first name?"
-    },
-    {
-        name: "last-name",
-        type: "input",
-        message: "What is the employee's last name?"
-    },
-    {
-        name: "employee-role",
-        type: "list",
-        message: "What is the employee's role?",
-        choices: [
-            "Sales Lead",
-            "Salesperson",
-            "Lead Engineer",
-            "Software Engineer",
-            "Account Manager",
-            "Accountant",
-            "Legal Team Lead"
-        ]
-    },
-    {
-        name: "employee-manager",
-        type: "list",
-        message: "Who is the employee's manager?",
-        choices: [
+function removeEmployee() {
+    connection.query(
 
-        ]
-    },
-    {
-        name: "employee-salary",
-        type: "input",
-        message: "What is the employee's salary?"
-    }
-];
+    )
+}
 
-const updateEmployeeRole = [
-    {
-        name: "update-employee-role",
-        type: "list",
-        message: "Which employee do you want to update?",
-        choices: [
-
-        ]
-    },
-    {
-        name: "new-role",
-        type: "list",
-        message: "What is the employee's new role?",
-        choices: [
-            "Sales Lead",
-            "Salesperson",
-            "Lead Engineer",
-            "Software Engineer",
-            "Account Manager",
-            "Accountant",
-            "Legal Team Lead"
-        ]
-    }
-];
-
-askFirstQuestion();
+function updateEmployeeRole() {
+    connection.query(
+        
+    )
+}
